@@ -1,2 +1,3 @@
-# responding-to-twilio-webhooks-using-aws-lambda
-A sample application that respond to Twilio Webhooks using AWS Lambda functions and C#
+# Respond to Twilio Webhooks Using AWS Lambda and .NET
+
+A sample application that records calls and downloads the recordings to AWS S3
