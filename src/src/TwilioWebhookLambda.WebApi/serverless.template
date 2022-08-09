@@ -8,7 +8,7 @@
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "TwilioWebhookSample.MinimalLambdaAPI",
+        "Handler": "TwilioWebhookLambda.WebApi::TwilioWebhookLambda.WebApi.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,

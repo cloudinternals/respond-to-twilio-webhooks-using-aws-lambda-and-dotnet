@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Twilio.AspNet.Core;
 using Twilio.TwiML;
-
-namespace TwilioWebhookSample.MinimalLambdaAPI.Controllers;
-
+ 
+namespace TwilioWebhookLambda.WebApi.Controllers;
+ 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class IncomingCallController : TwilioController
 {
     [HttpPost]
@@ -14,9 +14,9 @@ public class IncomingCallController : TwilioController
         var response = new VoiceResponse();
         response.Say("Hello. Please leave a message after the beep.");
         response.Record(
-            timeout: 10,
-            recordingStatusCallback: new Uri("https://oypxy6bjdu77k7setj5kujpmxy0daiey.lambda-url.us-east-2.on.aws/RecordingStatusChange")
+            timeout: 10, 
+            recordingStatusCallback: new Uri("/api/RecordingStatusChange", UriKind.Relative)
         );
-        return TwiML(response);    
+        return TwiML(response);
     }
 }

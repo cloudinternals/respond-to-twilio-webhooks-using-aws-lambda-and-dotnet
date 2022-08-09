@@ -8,13 +8,10 @@
   "profile": "colston_sysadmin",
   "region": "us-east-2",
   "configuration": "Release",
-  "s3-prefix": "TwilioWebhookSample.MinimalLambdaAPI/",
-  "template": "serverless.template",
-  "template-parameters": "",
   "function-runtime": "dotnet6",
   "function-memory-size": 256,
   "function-timeout": 30,
-  "function-handler": "TwilioWebhookSample.MinimalLambdaAPI",
-  "function-name": "TwilioWebhookSample-MinimalLambdaAPI",
+  "function-handler": "TwilioWebhookLambda.WebApi",
+  "function-name": "TwilioWebhookLambda-WebApi",
   "function-url-enable": true
 }
