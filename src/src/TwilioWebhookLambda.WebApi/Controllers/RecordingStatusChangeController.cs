@@ -17,7 +17,7 @@ public class RecordingStatusChangeController : TwilioController
         string bucketName = "my-twilio-call-recordings";
 
         using HttpClient client = new HttpClient(); // use HttpClient factory in production
-        using HttpResponseMessage response = await client.GetAsync(recordingUrl);
+        using HttpResponseMessage response = await client.GetAsync($"{recordingUrl}.mp3");
         using Stream recordingFileStream = await response.Content.ReadAsStreamAsync();
         using var s3Client = new AmazonS3Client();
         using var transferUtility = new TransferUtility(s3Client);
